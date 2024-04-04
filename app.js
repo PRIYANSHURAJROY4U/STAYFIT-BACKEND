@@ -21,9 +21,9 @@ db.mongoose // ek sath teeno ko db function me use kr liye dot se
     process.exit();
   });
 
-app.get("/", (req, res) => {
-  res.send("hey !!");
-});
+// app.get("/", (req, res) => {
+//   res.send("hey !!");
+// });
 
 const PORT = process.env.PORT || 4000;
 
