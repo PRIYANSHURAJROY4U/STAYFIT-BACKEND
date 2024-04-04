@@ -6,7 +6,7 @@ module.exports = app => {
   router.put("/:id", tutorials.update);
   router.delete("/:id", tutorials.delete);
   router.delete("/", tutorials.deleteAll);
-  router.get("/", tutorials.findAll);
+  router.get("/f", tutorials.findAll);
   router.get("/:id", tutorials.findOne);
   router.get("/published", tutorials.findAllPublished);
 
