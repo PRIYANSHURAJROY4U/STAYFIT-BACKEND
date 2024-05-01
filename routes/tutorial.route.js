@@ -9,6 +9,6 @@ module.exports = app => {
   router.get("/f", tutorials.findAll);
   router.get("/:id", tutorials.findOne);
   router.get("/published", tutorials.findAllPublished);
-
+// sara route tutorial route localhost/4000/api/tutorials/jo kaam ho
   app.use("/api/tutorials", router);
 };
