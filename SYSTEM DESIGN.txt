@@ -1,0 +1,99 @@
+1st -> get started -> login  ||  signup -> email and phone no collection for OTP generation -> OTP verification page(submit) 
+-> unique username and Password collection for registration as trainee 
+-> Data collection Form for Tell us about yourself asking Goal and height and weight for BMI calccn and target weight ask  
+-> Next 2 option will be there for Get personalised suggestion || Connect with trianer 
+-> it will take to discussion forum for different trainer and get connected to it 
+-> Next on home there is workout log section , where there they can perform different preloaded execise by pressing START and make their performed exercise log also by making it Custom log for every Day (important FEATURE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 1. User Authentication and Registration
+
+- **Signup Endpoint (`POST /signup`):**
+  - Collect email and phone number.
+  - Generate and send OTP using Nodemailer.
+  - Store user details in MongoDB with a status indicating OTP verification is pending.
+
+- **Login Endpoint (`POST /login`):**
+  - Verify user credentials.
+  - Generate a JWT token upon successful login.
+
+- **OTP Verification (`POST /verify-otp`):**
+  - Verify the OTP provided by the user.
+  - Update user status to verified in the database.
+
+- **Set Username and Password (`POST /set-username-password`):**
+  - Collect and store the unique username and password.
+  - Hash the password using bcrypt before storing it.
+
+### 2. User Profile and Data Collection
+
+- **Profile Endpoint (`POST /user/profile`):**
+  - Collect user data such as goals, height, weight, and target weight.
+  - Store this information in the user's document in MongoDB.
+
+- **Retrieve Profile (`GET /user/profile`):**
+  - Fetch and return the user's profile data.
+
+### 3. Personalized Suggestions and Trainer Connection
+
+- **Suggestions Endpoint (`GET /suggestions`):**
+  - Use user profile data to generate personalized suggestions.
+  - This could involve some business logic or integration with a recommendation engine.
+
+- **Trainers Endpoint (`GET /trainers`):**
+  - Retrieve a list of available trainers from the database.
+
+- **Connect with Trainer (`POST /connect-trainer`):**
+  - Allow users to connect with a trainer.
+  - Store the connection in the database.
+
+### 4. Discussion Forum
+
+- **Forum Endpoints:**
+  - `GET /forum`: Retrieve discussion threads.
+  - `POST /forum`: Create a new discussion thread.
+  - `POST /forum/reply`: Reply to a discussion thread.
+  - Use MongoDB to store and manage forum data.
+
+### 5. Workout Log
+
+- **Workout Log Endpoints:**
+  - `GET /workout-log`: Retrieve the user's workout log.
+  - `POST /workout-log`: Log a new workout session.
+  - `POST /workout-log/custom`: Create a custom workout log for a specific day.
+  - Store workout logs in a separate collection or as part of the user's document.
+
+### 6. Exercise Management
+
+- **Exercise Endpoints:**
+  - `GET /exercises`: Retrieve a list of preloaded exercises.
+  - `POST /exercises/start`: Start a preloaded exercise session.
+  - Maintain a collection of exercises in MongoDB.
+
+### Additional Tips
+
+- **Middleware:**
+  - Use middleware for JWT authentication to protect routes.
+  - Implement input validation using libraries like Joi or express-validator.
+
+- **Security:**
+  - Ensure all sensitive data is encrypted.
+  - Regularly update dependencies to patch security vulnerabilities.
+
+- **Testing:**
+  - Write unit and integration tests to ensure the reliability of your endpoints.

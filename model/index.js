@@ -7,5 +7,7 @@ const db = {};  // An empty object db is created to store the database connectio
 db.mongoose = mongoose;  //The mongoose object is added to the db object as db.mongoose.
 db.url = dbconfig.url;
 db.tutorial = require("../model/tutorial.model.js")(mongoose);
+db.user = require("../model/user.model.js")(mongoose);
+
 
 module.exports = db;
