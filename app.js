@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 const emailRoutes = require("./routes/emailRoutes");
 const bmiRoutes = require("./routes/bmiRoutes");
+const workoutLog = require("./routes/workoutLogRoutes");
 const multer = require("multer");
 
 var corsOptions = {
@@ -35,8 +36,8 @@ app.get("/check", (req, res) => {
 const upload = multer({ dest: "uploads/" });
 
 app.use("/api", emailRoutes);
-app.use("/api", bmiRoutes);
-
+app.use("/api", bmiRoutes);       // for bmi /api/calculate-bmi        aisa krke route hoga 
+app.use("/api",workoutLog);   //iske andar teen routes hai /api/workoutLog  and /api/addWorkout   AND /api/customAdd
 
 const PORT = process.env.PORT || 4000;
 
