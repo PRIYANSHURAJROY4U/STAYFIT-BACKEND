@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "postinstall": "npm rebuild bcrypt"
+     "postinstall": "node-pre-gyp"
   },
   "keywords": [],
   "author": "",
