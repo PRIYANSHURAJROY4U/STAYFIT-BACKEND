@@ -17,3 +17,19 @@ const workoutLogSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('WorkoutLog', workoutLogSchema);
+
+
+
+// it is example input for test and front-end
+// {
+//   "exercises" : [
+//     {
+//    "name" : "priyanshufind1f",
+//    "duration": "25", // in minutes
+//    "caloriesBurned": "150",
+//      "Sets" : "2",
+//      "Rep" : "5"
+//      }
+//      ],
+//      "customNotes": "Bench Press"
+// }

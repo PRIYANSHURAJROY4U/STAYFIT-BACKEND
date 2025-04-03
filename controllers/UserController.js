@@ -6,6 +6,9 @@ const jwt = require('jsonwebtoken');
 // Register a new user
 exports.registerUser = async (req, res) => {
   const { email, username, password } = req.body;
+  
+  console.log("Register User function called");
+  console.log("Request body:", req.body);
 
   try {
     // Check if user already exists
@@ -88,7 +91,8 @@ exports.loginUser = async (req, res) => {
         sameSite: 'Strict',
         maxAge: 3600000,
       });
-  
+     console.log(token);
+     
       res.json({ msg: 'Login successful' });
     } catch (err) {
       res.status(500).json({ error: 'Server error' });
